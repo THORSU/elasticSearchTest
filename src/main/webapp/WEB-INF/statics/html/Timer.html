@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.params.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #mytime {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function two_char(n) {
+            return n >= 10 ? n : "0" + n;
+        }
+
+        function stop() {
+            int=window.clearInterval(int);
+        }
+        var sec=0;
+        var int =self.setInterval("clock()",1000);
+        function clock() {
+            sec++;
+            var date = new Date(0, 0)
+            date.setSeconds(sec);
+            var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
+            document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+        };
+        //        function time_fun() {
+        //            int=window.clearInterval(int);
+        //        }
+        window.onload=function GetInfo() {
+
+            var pwd=$.query.get("bb");
+//            $("#name").text(pwd);
+            $("#name").html("密码是："+pwd);
+
+            
+        }
+
+
+
+    </script>
+</head>
+<body >
+<h1 id="mytime">00:00:00</h1>
+<input type="button" onclick="stop()" value="停止" \/>
+<div id="name"></div>
+</h3>
+</body>
+</html>

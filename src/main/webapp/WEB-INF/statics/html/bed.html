@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bed</title>
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.params.js"></script>
+
+</head>
+<body>
+<div id="aa"></div>
+<input type="button" onclick="getpass()" value="开始使用">
+</body>
+<script>
+    function getpass() {
+        var aa="bed";
+        $.ajax({
+            type:"post",
+            url:"/night/use.from?GoodsName="+aa,
+            dataType:"html",
+            success:function (msg) {
+//                var con = confirm(msg);
+//                if (con) {
+//                var bb=msg;
+                    window.location.href = "Timer.html?bb="+msg;
+//                }
+            }
+        })
+    }
+    function bed() {
+        var ss="bed";
+//        console.log(ss);
+        $.ajax({
+            type: "post",
+            url:"/night/SearchContext.from?GoodsName="+ss,
+            dataType: "html",
+            success:function (msg) {
+
+                $("#aa").html(msg);
+
+            }
+        })
+    }
+    window.onload=bed();
+</script>
+</html>

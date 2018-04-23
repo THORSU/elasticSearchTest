@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+sss
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "get",
+            url: "/night/getUser.from",
+            dataType: "html",
+            success: function (msg) {
+                alert(msg);
+            }
+        })
+    })
+</script>
+</html>
